@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="boxheart">
+      <div class="heart"><h1>Bấm vô đi bé</h1></div>
+      <div class="beat"></div>
+    </div>
+    <div class="boxchoose">
+      <h2>Tha lỗi cho t nha❤️</h2>
+      <div class="listbutton">
+        <button id="no">Never</button>
+        <button id="yes">Oke tha nè</button>
+      </div>
+    </div>
+    <div class="popup">
+      <div class="inner">
+        <h3>Iu bé nhiều nè</h3>
+        <img src="love.gif" alt="" />
+        <p>
+          T sẽ không vô tâm với bé, làm bé buồn nữa đâu cho t cơ hội nhaa ❤️, t
+          hog muốn mất bé. Ngoan t chở đi uống <b>Trà sữa</b> nhaa
+        </p>
+      </div>
+    </div>
+    <audio id="myAudio" src="nhac.mp3"></audio>
+
+    <script>
+      const noBtn = document.querySelector("#no");
+      const yesBtn = document.querySelector("#yes");
+      const boxheart = document.querySelector(".boxheart");
+      const boxchoose = document.querySelector(".boxchoose");
+      const popup = document.querySelector(".popup");
+      const audio = document.querySelector("#myAudio");
+
+      boxheart.addEventListener("click", function () {
+        boxheart.classList.add("active");
+        boxchoose.classList.add("active");
+        audio.play(); // Phát nhạc khi nhấn vào trái tim
+      });
+
+      yesBtn.addEventListener("click", function () {
+        popup.classList.add("active");
+      });
+
+      noBtn.addEventListener("mouseenter", () => {
+        const top = Math.floor(Math.random() * window.innerHeight);
+        const left = Math.floor(Math.random() * window.innerWidth);
+
+        noBtn.style.top = `${top}px`;
+        noBtn.style.left = `${left}px`;
+      });
+    </script>
+  </body>
+</html>
